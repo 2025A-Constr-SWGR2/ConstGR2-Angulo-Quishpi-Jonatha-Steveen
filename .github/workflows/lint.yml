@@ -1,0 +1,24 @@
+name: Node Lint
+run-name: Lint Node.js App
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: [self-hosted]
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      - name: Install dependencies
+        working-directory: calculadora
+        run: npm install
+
+      - name: Lint
+        working-directory: calculadora
+        run: npm run lint
