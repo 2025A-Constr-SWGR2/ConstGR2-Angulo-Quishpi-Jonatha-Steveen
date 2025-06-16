@@ -16,9 +16,11 @@ jobs:
           node-version: '22.x'
 
       - name: Install dependencies
-        working-directory: calculadora
-        run: npm install
+        run: |
+          cd calculadora
+          npm install
 
       - name: Lint
-        working-directory: calculadora
-        run: npm run lint
+        run: |
+          cd calculadora
+          npm run lint

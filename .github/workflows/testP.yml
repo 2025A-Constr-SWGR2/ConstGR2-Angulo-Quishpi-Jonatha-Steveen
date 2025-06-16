@@ -1,5 +1,5 @@
-name: Node Test
-run-name: Test Node.js App
+name: Node Test project
+run-name: Test Node.js project
 
 on: [push]
 
@@ -17,10 +17,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd calculadora
+          cd clientManager
           npm install
 
       - name: Test
         run: |
-          cd calculadora
+          cd clientManager
           npm run test
